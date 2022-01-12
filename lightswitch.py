@@ -1,13 +1,16 @@
-import tkinter as tk
-window = tk.Tk()
+from tkinter import Tk, Button
+window = Tk()
 
-button = tk.Button(text='...', bg="white", fg="black")
-button.pack(pady = 20, padx = 20)
-
-# schijf hier tussen je code
-
-
-
-# schijf hier tussen je code
+def licht_aan():
+    window.configure(bg="yellow")
+    button.configure(text='licht uit', command=licht_uit)
+    print('het licht is aan')
+def licht_uit():
+    window.configure(bg="black")
+    button.configure(text='licht aan', command=licht_aan)
+    print('het licht is uit')
+window.configure(bg="black")
+button = Button(window, text='licht aan', command=licht_aan)
+button.pack(pady = 80, padx = 80)
 
 window.mainloop()
