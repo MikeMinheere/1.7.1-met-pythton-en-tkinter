@@ -13,5 +13,3 @@ window.configure(bg="black")
 button = Button(window, text='licht aan', command=licht_aan)
 button.pack(pady = 80, padx = 80)
 window.mainloop()
-
-#in 1 functie zetten
