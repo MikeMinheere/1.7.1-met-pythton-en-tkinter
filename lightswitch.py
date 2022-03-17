@@ -1,15 +1,22 @@
 from tkinter import Tk, Button
 window = Tk()
 
-def licht_aan():
-    window.configure(bg="yellow")
-    button.configure(text='licht uit', command=licht_uit)
-    print('het licht is aan')
-def licht_uit():
-    window.configure(bg="black")
-    button.configure(text='licht aan', command=licht_aan)
-    print('het licht is uit')
+a= False
+
+def licht():
+    global a
+    if a == False:
+        a = True
+        window.configure(bg="yellow")
+        button.configure(text='licht uit')
+        print('het licht is aan')
+    else:
+        a = False
+        window.configure(bg="black")
+        button.configure(text='licht aan')
+        print('het licht is uit')
+
 window.configure(bg="black")
-button = Button(window, text='licht aan', command=licht_aan)
+button = Button(window, text='licht aan', command=licht)
 button.pack(pady = 80, padx = 80)
 window.mainloop()
